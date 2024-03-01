@@ -17,13 +17,11 @@ class Db
 
     }
 
-
     public function query($query, $params = [])
     {
         $this->stmt = $this->conn->prepare($query);
         $this->stmt->execute($params);
         return $this->stmt;
     }
-
 
 }
