@@ -46,9 +46,7 @@ Class User
         }
     }
     public function changesUser($id, $name, $email, $phone, $password) {
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $this->db->query("UPDATE users SET `name` = ?, `email` = ?, `phone` = ?,`password` = ? WHERE id = ?", [$name,$email,$phone,$hashedPassword,$id]);
-
+        $this->db->query("UPDATE users SET `name` = ?, `email` = ?, `phone` = ?,`password` = ? WHERE id = ?", [$name,$email,$phone,$password,$id]);
         return 'Данные изменены';
 
     }

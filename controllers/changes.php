@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = empty($_POST['name']) ? $loginuser['name'] : $_POST['name'];
     $email = empty($_POST['email']) ? $loginuser['email'] : $_POST['email'];
     $phone = empty($_POST['phone']) ? $loginuser['phone'] : $_POST['phone'];
-    $password = empty($_POST['password']) ? $loginuser['password'] : $_POST['password'];
+    $password = empty($_POST['password']) ? $loginuser['password'] : password_hash($_POST['password'], PASSWORD_DEFAULT);
     $_SESSION['message'] = $user->changesUser($loginuser['id'], $name, $email, $phone, $password);
     header('Location: /');
     exit;
