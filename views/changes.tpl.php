@@ -24,7 +24,7 @@ global $loginuser; ?>
                        placeholder="Скрыт">
             </div>
             <input type="hidden" name="id" value="<?= $loginuser['id'] ?>">
-            <button type="submit" class="btn btn-primary">Регистрация</button>
+            <button type="submit" class="btn btn-primary">Изменить</button>
         </form>
         <?php if (!empty($_SESSION['message'])): ?>
             <div class="text-danger bg-light p-2 col-md-4 offset-md-4"
